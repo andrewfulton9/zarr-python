@@ -6,3 +6,7 @@ sphinx-issues
 sphinx-rtd-theme
 numpydoc
 numpy
+pypandoc
+ipykernel
+nbsphinx
+
