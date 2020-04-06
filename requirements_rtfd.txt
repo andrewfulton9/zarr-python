@@ -6,7 +6,6 @@ sphinx-issues
 sphinx-rtd-theme
 numpydoc
 numpy
-pypandoc
 ipykernel
 nbsphinx
-
+git+git://github.com/bebraw/pypandoc.git@8fa4e1c7c61a052c25c7ea23e470199ffd9cfea2
