@@ -285,7 +285,7 @@ Enhancements
 
 * **Advanced indexing**. The ``Array`` class has several new methods and
   properties that enable a selection of items in an array to be retrieved or
-  updated. See the :ref:`tutorial_indexing` tutorial section for more
+  updated. See the :ref:`/tutorial.ipynb#Advanced-indexing` tutorial section for more
   information. There is also a `notebook
   <https://github.com/zarr-developers/zarr-python/blob/master/notebooks/advanced_indexing.ipynb>`_
   with extended examples and performance benchmarks. :issue:`78`, :issue:`89`,
@@ -298,15 +298,15 @@ Enhancements
   compressor codecs for Zstd and LZ4. This change is backwards-compatible with
   existing code, as all codec classes defined by Numcodecs are imported into the
   :mod:`zarr.codecs` namespace. However, it is recommended to import codecs from
-  the new package, see the tutorial sections on :ref:`tutorial_compress` and
-  :ref:`tutorial_filters` for examples. With contributions by
+  the new package, see the tutorial sections on :ref:`/tutorial.ipynb#Compressors` and
+  :ref:`/tutorial.ipynb#Filters` for examples. With contributions by
   :user:`John Kirkham <jakirkham>`; :issue:`74`, :issue:`102`, :issue:`120`,
   :issue:`123`, :issue:`139`.
 
 * **New storage class for DBM-style databases**. The
   :class:`zarr.storage.DBMStore` class enables any DBM-style database such as gdbm,
   ndbm or Berkeley DB, to be used as the backing store for an array or group. See the
-  tutorial section on :ref:`tutorial_storage` for some examples. :issue:`133`,
+  tutorial section on :ref:`/tutorial.ipynb#Storage-alternatives` for some examples. :issue:`133`,
   :issue:`186`.
 
 * **New storage class for LMDB databases**. The :class:`zarr.storage.LMDBStore` class
@@ -322,7 +322,7 @@ Enhancements
   :func:`zarr.hierarchy.Group.tree` method which enables a tree representation of
   a group hierarchy to be printed. Also provides an interactive tree
   representation when used within a Jupyter notebook. See the
-  :ref:`tutorial_diagnostics` tutorial section for examples. By
+  :ref:`/tutorial.ipynb#Array-and-group-diagnostics` tutorial section for examples. By
   :user:`John Kirkham <jakirkham>`; :issue:`82`, :issue:`140`, :issue:`184`.
 
 * **Visitor API**. The ``Group`` class now implements the h5py visitor API, see
@@ -342,7 +342,7 @@ Enhancements
   store. The functions :func:`zarr.convenience.save` and
   :func:`zarr.convenience.load` are also available and provide a convenient way to
   save an entire NumPy array to disk and load back into memory later. See the
-  tutorial section :ref:`tutorial_persist` for examples. :issue:`104`,
+  tutorial section :ref:`/tutorial.ipynb#Persistent-arrays` for examples. :issue:`104`,
   :issue:`105`, :issue:`141`, :issue:`181`.
 
 * **IPython completions**. The ``Group`` class now implements ``__dir__()`` and
@@ -352,7 +352,7 @@ Enhancements
 * **New info property; changes to __repr__**. The ``Group`` and
   ``Array`` classes have a new ``info`` property which can be used to print
   diagnostic information, including compression ratio where available. See the
-  tutorial section on :ref:`tutorial_diagnostics` for examples. The string
+  tutorial section on :ref:`/tutorial.ipynb#Array-and-group-diagnostics` for examples. The string
   representation (``__repr__``) of these classes has been simplified to ensure
   it is cheap and quick to compute in all circumstances. :issue:`83`,
   :issue:`115`, :issue:`132`, :issue:`148`.
@@ -360,7 +360,7 @@ Enhancements
 * **Chunk options**. When creating an array, ``chunks=False`` can be specified,
   which will result in an array with a single chunk only. Alternatively,
   ``chunks=True`` will trigger an automatic chunk shape guess. See
-  :ref:`tutorial_chunks` for more on the ``chunks`` parameter. :issue:`106`,
+  :ref:`/tutorial.ipynb#Chunk-optimizations` for more on the ``chunks`` parameter. :issue:`106`,
   :issue:`107`, :issue:`183`.
 
 * **Zero-dimensional arrays** and are now supported; by
@@ -385,7 +385,7 @@ Enhancements
   creating an array with ``dtype=object`` was possible but could under certain
   circumstances lead to unexpected errors and/or segmentation faults. To make it easier
   to properly configure an object array, a new ``object_codec`` parameter has been
-  added to array creation functions. See the tutorial section on :ref:`tutorial_objects`
+  added to array creation functions. See the tutorial section on :ref:`/tutorial.ipynb#Object-arrays`
   for more information and examples. Also, runtime checks have been added in both Zarr
   and Numcodecs so that segmentation faults are no longer possible, even with a badly
   configured array. This API change is backwards compatible and previous code that created
@@ -441,16 +441,16 @@ Documentation
   with any of the material as previously implemented, and so the changes have been made
   in-place in the document without incrementing the document version number. See the
   section on :ref:`spec_v2_changes` in the specification document for more information.
-* A new :ref:`tutorial_indexing` section has been added to the tutorial.
-* A new :ref:`tutorial_strings` section has been added to the tutorial
+* A new :ref:`/tutorial.ipynb#Advanced-indexing` section has been added to the tutorial.
+* A new :ref:`/tutorial.ipynb#String-arrays` section has been added to the tutorial
   (:issue:`135`, :issue:`175`).
-* The :ref:`tutorial_chunks` tutorial section has been reorganised and updated.
-* The :ref:`tutorial_persist` and :ref:`tutorial_storage` tutorial sections have
+* The :ref:`/tutorial.ipynb#Chunk-optimizations` tutorial section has been reorganised and updated.
+* The :ref:`/tutorial.ipynb#Persistent-arrays` and :ref:`/tutorial.ipynb#Storage-alternatives` tutorial sections have
   been updated with new examples (:issue:`100`, :issue:`101`, :issue:`103`).
-* A new tutorial section on :ref:`tutorial_pickle` has been added (:issue:`91`).
-* A new tutorial section on :ref:`tutorial_datetime` has been added.
-* A new tutorial section on :ref:`tutorial_diagnostics` has been added.
-* The tutorial sections on :ref:`tutorial_sync` and :ref:`tutorial_tips_blosc` have been
+* A new tutorial section on :ref:`/tutorial.ipynb#Pickle-support` has been added (:issue:`91`).
+* A new tutorial section on :ref:`/tutorial.ipynb#Datetimes-and-timedeltas` has been added.
+* A new tutorial section on :ref:`/tutorial.ipynb#Array-and-group-diagnostics` has been added.
+* The tutorial sections on :ref:`/tutorial.ipynb#Parallel-computing-and-synchronization` and :ref:`/tutorial.ipynb#Configuring-blosc` have been
   updated to provide information about how to avoid program hangs when using the Blosc
   compressor with multiple processes (:issue:`199`, :issue:`201`).
 
@@ -556,14 +556,14 @@ Hierarchies
 ~~~~~~~~~~~
 
 Support has been added for organizing arrays into hierarchies via groups. See
-the tutorial section on :ref:`tutorial_groups` and the :mod:`zarr.hierarchy`
+the tutorial section on :ref:`/tutorial.ipynb#Groups` and the :mod:`zarr.hierarchy`
 API docs for more information.
 
 Filters
 ~~~~~~~
 
 Support has been added for configuring filters to preprocess chunk data prior
-to compression. See the tutorial section on :ref:`tutorial_filters` and the
+to compression. See the tutorial section on :ref:`/tutorial.ipynb#Filters` and the
 :mod:`zarr.codecs` API docs for more information.
 
 Other changes
@@ -589,7 +589,7 @@ Thanks to :user:`Matthew Rocklin <mrocklin>`, :user:`Stephan Hoyer <shoyer>` and
 
 * The bundled Blosc library has been upgraded to version 1.10.0. The 'zstd'
   internal compression library is now available within Blosc. See the tutorial
-  section on :ref:`tutorial_compress` for an example.
+  section on :ref:`/tutorial.ipynb#Compressors` for an example.
 * When using the Blosc compressor, the default internal compression library
   is now 'lz4'.
 * The default number of internal threads for the Blosc compressor has been
@@ -615,8 +615,8 @@ The main motivation for re-organizing the code was to create an
 abstraction layer between the core array logic and data storage (:issue:`21`).
 In this release, any
 object that implements the ``MutableMapping`` interface can be used as
-an array store. See the tutorial sections on :ref:`tutorial_persist`
-and :ref:`tutorial_storage`, the :ref:`spec_v1`, and the
+an array store. See the tutorial sections on :ref:`/tutorial.ipynb#Persistent-arrays`
+and :ref:`/tutorial.ipynb#Storage-alternatives`, the :ref:`spec_v1`, and the
 :mod:`zarr.storage` module documentation for more information.
 
 Please note also that the file organization and file name conventions
@@ -635,8 +635,8 @@ chunks. This release still bundles the c-blosc library and uses Blosc
 as the default compressor, however other compressors including zlib,
 BZ2 and LZMA are also now supported via the Python standard
 library. New compressors can also be dynamically registered for use
-with Zarr. See the tutorial sections on :ref:`tutorial_compress` and
-:ref:`tutorial_tips_blosc`, the :ref:`spec_v1`, and the
+with Zarr. See the tutorial sections on :ref:`/tutorial.ipynb#Compressors` and
+:ref:`/tutorial.ipynb#Configuring-blosc`, the :ref:`spec_v1`, and the
 :mod:`zarr.compressors` module documentation for more information.
 
 Synchronization
@@ -645,7 +645,7 @@ Synchronization
 The synchronization code has also been refactored to create a layer of
 abstraction, enabling Zarr arrays to be used in parallel computations
 with a number of alternative synchronization methods. For more
-information see the tutorial section on :ref:`tutorial_sync` and the
+information see the tutorial section on :ref:`/tutorial.ipynb#Parallel-computing-and-synchronization` and the
 :mod:`zarr.sync` module documentation.
 
 Changes to the Blosc extension
@@ -667,7 +667,7 @@ is running within a single-threaded or multi-threaded program and
 adapts its internal behaviour accordingly (:issue:`27`). There is no need for
 the user to make any API calls to switch Blosc between contextual and
 non-contextual (global lock) mode. See also the tutorial section on
-:ref:`tutorial_tips_blosc`.
+:ref:`/tutorial.ipynb#Configuring-Blosc`.
 
 Other changes
 ~~~~~~~~~~~~~
@@ -681,7 +681,7 @@ option present in the previous release, and this has been removed.
 The memory layout within chunks can now be set as either "C"
 (row-major) or "F" (column-major), which can help to provide better
 compression for some data (:issue:`7`). See the tutorial
-section on :ref:`tutorial_chunks_order` for more information.
+section on :ref:`/tutorial.ipynb#Chunk-memory-layout` for more information.
 
 A bug has been fixed within the ``__getitem__`` and ``__setitem__``
 machinery for slicing arrays, to properly handle getting and setting
